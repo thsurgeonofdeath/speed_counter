@@ -1,6 +1,6 @@
 ## Introduction
 
-This is a game that was made using react hooks : state, effect, Ref... and custom hooks
+This is a game that makes use of react hooks : state, effect, Ref... and custom hooks
 
 The goal behind the game is to tap as much words as possible once the counter starts, you'll get your score once the timer is out
 

@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import {useState, useEffect} from "react"
+import {useState, useEffect, useRef} from "react"
 
 function App() {
   const STARTING_TIME = 5
@@ -9,6 +9,7 @@ function App() {
   const [timeRemaining, setTimeRemaining] = useState(STARTING_TIME)
   const [isTimeRunning, setIsTimeRunning] = useState(false)
   const [wordCount, setWordCount] = useState(0)
+  const textBoxRef = useRef(null)
   
   function handleChange(e) {
       const {value} = e.target
@@ -24,6 +25,8 @@ function App() {
       setIsTimeRunning(true)
       setTimeRemaining(STARTING_TIME)
       setText("")
+      textBoxRef.current.disabled = false
+      textBoxRef.current.focus()
   }
   
   function endGame() {
@@ -50,6 +53,7 @@ function App() {
               onChange={handleChange}
               value={text}
               disabled={!isTimeRunning}
+              ref={textBoxRef}
           />
           <h4>Time remaining: {timeRemaining}</h4>
           <button 

@@ -23,6 +23,11 @@ button {
   text-transform: uppercase;
 }
 
+button:hover {
+  cursor: pointer;
+}
+
+
 h1 {
   font-size: 20px;
   text-align:center;
